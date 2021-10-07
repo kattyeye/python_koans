@@ -21,14 +21,20 @@ def triangle(a, b, c):
     writing conditional statements for triangles
     returns the type of triangle
     """
-    if a == b == c:
-        return 'equilateral'
-    elif a == b or b == c or c == a:
-        return 'isosceles'
-    elif a != b and b != c and c != a:
-        return 'scalene'
+    if a+b < c or a+c < b or c + b < a:
+        raise TriangleError
+    elif a < 1 or b < 1 or c < 1:
+        raise TriangleError
     else:
-        print("not a triangle?")
+        pass
+        if a < b < c:
+            return 'equilateral'
+        elif a == b or b == c or c == a:
+            return 'isosceles'
+        elif a != b and b != c and c != a:
+            return 'scalene'
+        else:
+            print("not a triangle?")
 
 # Error class used in part 2.  No need to change this code.
 
