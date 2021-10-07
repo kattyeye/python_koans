@@ -17,9 +17,21 @@
 #   about_triangle_project_2.py
 #
 def triangle(a, b, c):
-    # DELETE 'PASS' AND WRITE THIS CODE
-    pass
+    """
+    writing conditional statements for triangles
+    returns the type of triangle
+    """
+    if a == b == c:
+        return 'equilateral'
+    elif a == b or b == c or c == a:
+        return 'isosceles'
+    elif a != b and b != c and c != a:
+        return 'scalene'
+    else:
+        print("not a triangle?")
 
 # Error class used in part 2.  No need to change this code.
+
+
 class TriangleError(Exception):
     pass
